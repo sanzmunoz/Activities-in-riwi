@@ -1,42 +1,22 @@
-# # x = 10
-
-# # def valor():
-# #     x=20
-# #     print(x)
-
-# # valor()
-# # print(x)
-
-# nums=[12,0,45,6]
-# animals=["cat","dog","elephant","snake"]
-
-# def FirstAndLast(cosas):
-#     first=cosas[0]
-#     last=cosas[-1]
-#     return first,last
-
-# animal1,animal2=FirstAndLast(animals)
-# print(animal1,animal2)
-
-# def doblarFunc(num):
-#     result=num*2
-#     return result
-
-# res=doblarFunc(40)
-# print("funcion normal",res)
-
-# doblar = lambda num: num*2 #lambda utiliza menos memoria y resume la escritura de una funcion
-
-# res=doblar(33)
-# print("Funion nueva: ", res)
-
-
-
-def ingreso_producto (name):
-    
+# def ingreso_producto (name):
+#     while True:
+#         try: 
+#             cost=float(input("Cual es el precio del producto => ")) #Solicita ingreso de la cantiadad del producto
+#             break            
+#         except ValueError:
+#             print("Dato erroneo, ingrese de nuevo => ")
+#     while True:
+#         try:
+#             cant=int(input("Ingrese La cantidad del producto => "))
+#             break
+#         except ValueError:
+#             print("Dato erroneo, ingrese de nuevo => ")
+#     return cost, cant
     
 
-producto=ingreso_producto(input("ingres product: "))
+# producto=input("ingres product: ")
+# ingreso_producto(producto)
+# print(producto,cost,cant)
 
 
 
@@ -86,3 +66,112 @@ producto=ingreso_producto(input("ingres product: "))
 
 # nombre=datos.get("Nombre", "No dispnible")
 # print(nombre) #Imprime pedro
+
+# def creacion_producto(name, cost, qw):
+#     #name=input("Nombre de producto => ") #pide al usuario el nombre del producto
+#     name=produ #funcion para recibir el nombre del producto
+#         # produ=input("Nombre de producto => ") #pide al usuario el nombre del producto
+#     while True: #dos bucles while-true: para recibir y ciclar el precio y producto
+#         try: 
+#             cost=float(costo) #Solicita ingreso de la cantiadad del producto
+#             break            
+#         except ValueError: #recibe el error en caso que se ingrese erroneamente
+#             print("Dato erroneo, ingrese de nuevo => ")
+#             costo=input("ingrese el costo ")
+
+#     while True:
+#         try:
+#             qw=int(cant)
+#             break
+#         except ValueError:
+#             print("Dato erroneo, ingrese de nuevo => ")
+#     return name, cost, cant
+
+# produ=input("ingrese el nombre del producto ")
+# costo=input("ingrese el costo ")
+# cant=input("Cantidad ")
+# creacion_producto(produ,costo,cant)
+# print(f"Producto: {produ}||Valor unitario: ${costo}||Cantidad: {cant}und||Costo total: ${costo*cant}")
+
+#Escribir en un archivo
+# datos= ["ana", "luis", "José"]
+# with open("nombres.txt","w") as archivo:
+#     for nombre in datos:
+#         archivo.write(nombre + "\n")
+
+# #leer el archivo
+# with open("nombres.txt", "r") as archivo:
+#     contenido= archivo.read()
+#     print(contenido)
+
+# with open ("nombres.txt", "r") as archivo:
+#     for linea in archivo:
+#         print("linea:",linea.strip())
+
+# import json
+# ARCHIVO= "estudiantes.json"
+# def inicializar():
+#     try:
+#         with open(ARCHIVO, "r") as f:
+#             return json.load(f)
+#     except FileNotFoundError:
+#         return {}
+    
+# def guardar(data):
+#     with open(ARCHIVO, "w") as f:
+#         json.dump(data,f,ident=4)
+
+# def crear(codigo,nombre,edad):
+#     data=inicializar()
+#     data[codigo]={"nombre":nombre,"edad": edad}
+#     guardar(data)
+#     print("Estudiante creado.")
+
+# def leer():
+#     data = inicializar()
+#     for cod, info in data.items():
+#         print(cod, info)
+
+# def actualiazar(codigo, nombre=None, edad=None):
+#     data=inicializar()
+#     if codigo in data:
+#         if nombre:
+#             data[codigo]["nombre"]=nombre
+#         if edad:
+#             data[codigo][codigo]["edad"]=edad
+#         guardar(data)
+#         print("Estudiante actualizado.")
+#     else:
+#         print("Estudiante no encontrado.")
+
+# def eliminar(codigo):
+#     data=inicializar()
+#     if codigo in data:
+#         del data[codigo]
+#         guardar(data)
+#         print("Estudiante eliminado")
+#     else:
+#         print("Estudiante no encontrado")
+
+# #Pruebas
+# crear("A001","Ana",21)
+# crear("A002","luis",20)
+# leer()
+# actualiazar ("A001", edad=22)
+# eliminar("A002")
+# leer()
+
+tupla = ("red", "yellow", "green")
+print(tupla[1])#muestra el valor en posicion 1 de la tupla
+print(tupla[2])
+
+# tupla.append("blue") # AttributeError
+t = (1, 2, 3)
+tupla_to_list = list(t) #converite tupla a lista
+print(tupla_to_list)
+tupla_to_list.append(4)
+print(tupla_to_list)
+tupla_to_list.append([1,2,3])
+list_to_tuple=tuple(tupla_to_list) #convierte lista a tupla
+print(list_to_tuple)
+list_to_tuple.append()

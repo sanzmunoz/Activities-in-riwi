@@ -1,0 +1,5 @@
+Fruta: sandia en pitillo
+Fruta: pera picada con aji
+Fruta: manzana con dulce 
+Fruta: naranja en caja rendonda
+Fruta: fresa con sal en ponchera

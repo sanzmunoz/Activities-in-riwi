@@ -1,0 +1,3 @@
+Tarea: contemplar existencia
+Tarea: exitir  o no
+Tarea: salir
