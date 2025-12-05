@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(67, 67, 226);
+}
+
+nav {
+    display: flex; /* alinea horizo */
+    align-items: center;
+    background-color: rgb(9, 22, 134);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: antiquewhite;
+    text-decoration: none;
+    padding: 3px 10px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
