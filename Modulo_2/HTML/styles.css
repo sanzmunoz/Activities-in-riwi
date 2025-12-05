@@ -1,0 +1,56 @@
+h1{
+    color: brown;
+}
+/* se da color y ubicacion a id llamado principal */
+#principal{
+    color: rgb(74, 255, 2);
+    text-align: center;
+}
+
+/* Seleccionando p para darle color */
+p {
+    color: #333;
+}
+
+/* selector de  clase */
+.importante {
+    color: rgb(255, 0, 0);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    padding: 1rem 10rem;
+}
+
+#second {
+    font-size: 2.5rem;
+}
+
+/* Selector de atributo */
+
+input[type="text"] {
+    border: 5px solid #ccc;
+}
+input[type="password"] {
+    border: 3px solid #ccc;
+}
+
+/* Color de fondo general */
+body{
+    background-image: url(../images/comp.jpg);
+}
+
+/* fondo especifico */
+#principal {
+    background-image: url(../images/scripts.webp);
+    background-size: 600px 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Sombras */
+.otro {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10 px rgba(0, 0, 0, .12);
+}
+

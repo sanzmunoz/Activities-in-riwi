@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--lineas basicas-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="border: 2px #4226a7 solid;">MaIn HeAdEr</h1>
+    </header>
+    <nav>
+        <ul><!--ul es lista no ordenada de elementos-->
+            <hr><!--menu de secciones-->
+            <li><a href="#section">Section True</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <hr><!--Crea lineas horizontales-->
+            <br><!--salto de linea-->
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <table border="4"> <!--tabla para organizar datos -->
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+                <tr>
+                    <td>data 3</td>
+                    <td>data 4</td>
+                </tr>
+            </table>
+            <h2>SubHeadinG for SectioN</h2>
+            <blockquote>citas largas</blockquote>
+            <cite>mención de fuente de cita</cite>
+            <p class="green">This is a paragraph of text in the sectioN.</p>
+        </section>
+    </main>
+    <action="/sumbit" method="post"> <!--Formulario para ingresar texto especifico-->
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="password" id="password"><br><br>
+        <!---->
+        <select name="country" id="country">
+            <option value="usa">Unite states</option>
+            <option value="col">Colombia</option>
+            <option value="canada">Canada</option>
+        </select><br><br>
+        <textarea name="message" id="message" rows="4" cols="50">Escribe algo aquí</textarea>
+    <button>Enviar a casa</button>
+    <footer><p>&copy; 2024 RiWi</p></footer>
+
+</body>
+</html>
