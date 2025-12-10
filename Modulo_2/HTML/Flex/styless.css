@@ -1,0 +1,17 @@
+.bloque {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    gap: 100px;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(255, 140, 0);
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.art {
+    background-color: aqua;
+}

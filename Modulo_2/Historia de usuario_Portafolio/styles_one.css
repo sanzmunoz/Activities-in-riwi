@@ -4,17 +4,22 @@ body {
 
 nav {
     display: flex; /* alinea horizo */
-    align-items: center;
     background-color: rgb(9, 22, 134);
     padding: 10px 20px;
     border-radius: 10px;
 }
 
 nav a {
-    color: antiquewhite;
-    text-decoration: none;
-    padding: 3px 10px;
-    cursor: pointer;
+    color: rgb(201, 201, 201);
+    text-decoration:none;
+    padding: 10px;
+    cursor:copy;
+}
+h2{
+    background-color: rgb(18, 15, 230);
     text-align: center;
-    display: inline-block;
+    margin: 20px;
+    border-radius: 8px;
+    padding: 10px;
+
 }

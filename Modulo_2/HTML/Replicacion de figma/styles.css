@@ -1,0 +1,35 @@
+body {
+    padding: 100px 0 100px 0;
+    font-family: "Bitcount Prop Single", system-ui;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+}
+.logo {
+    height: 56px;
+    width: 220px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.link {
+    font-size: 20px;
+}
+.link__button {
+    border: 1px solid black;
+    padding: 20px 35px;
+    border-radius: 14px;
+}
+.sectionFrist {
+    display: flex;
+    justify-content: space-between;
+}
+
