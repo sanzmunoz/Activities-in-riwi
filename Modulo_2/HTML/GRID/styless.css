@@ -1,0 +1,19 @@
+.prueba__flex {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+
+    background-color: bisque;
+    width: 1200px;
+    height: 600px;
+
+}
+
+.item {
+    background-color: green;
+    width: 110px;
+    height: 100 px;
+    border:  2px;
+    border-radius: 10px;
+    padding: 5px;
+}
