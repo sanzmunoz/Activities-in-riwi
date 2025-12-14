@@ -1,34 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- Se agrega enlaza el archivo css y se agrega una fuente desde google -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Mascotas</title>
 </head>
 <body>
-    <header>Mis Mascotas</header>
-    <li><a href="index.html" target="_parent">Volver al portafolio</a></li>
-    <div class="tarjeta1">
-    <img src="Photos/gato.jpeg" alt="mi gato" class="image"><br>
-    </div>
-    <br><article class="pet">
-        Él es mi gato, se llama Ronaldo y aunque no lo parezca es
-        muy serio y tranquilo pero lleva las riendas de la casa.
-    </article><br><br>
-    
+    <header> <!-- en parte superior se agrega titlo y link para regresar -->
+        <a>Mis Mascotas</a>
+        <a href="index.html" target="_parent">Volver al portafolio</a>
+    </header><br>
 
-    <div class="tarjeta1"><img src="Photos/hamster.jpeg" alt="mi hamster"class="image"></div>
-    <br><article class="pet">
-        Él es Roberto, es un hamster muy anioso por estar haciendo algo,incluso 
-        para comer no se queda quieto en un lugar sino que va moviendo la coca
-    </article><br><br>
+    <main>
+        <article class="cato"> <!-- espacio especifico para la primer tarjeta a mostrar con foto y texto -->
+            <div>
+                <img src="Photos/gato.jpeg" alt="mi gato" class="image">
+            </div>
+            <p>
+                Conoce a "Galaxia I, El Inmutable", un ejemplar de felino doméstico que opera 
+                bajo la firme convicción de que tu casa es, en realidad, un complejo palaciego diseñado 
+                exclusivamente para su comodidad y servicio.
+                Sir Ronroneo no es una mascota; es un dictador benevolente de cuatro patas. Su liderazgo 
+                se basa en principios de dominación sutil y exigencia constante.
+            </p>
+        </article>
+        
+        <article class="hamster"> <!-- espacio especifico para la segunda tarjeta a mostrar con foto y texto -->
+            <div><img src="Photos/hamster.jpeg" alt="mi hamster"class="image">
+            </div>
+            <p>
+                Él es Roberto, es un hamster muy anioso por estar haciendo algo,incluso 
+                para comer no se queda quieto en un lugar sino que va moviendo la coca
+            </p>
+        </article>
 
-    <div class="tarjeta1"><img src="Photos/perro.jpg" alt="mi perro" class="image">
-    </div>
-    <article class="pet">
-        Él es DoggyDoggy, un perro que le gusta molestar a los demás, hacer daños
-        y acabar con todo.
-    </article>
+        <article class="doggy"> <!-- espacio especifico para la tercer tarjeta a mostrar con foto y texto -->
+            <div class="tarjeta1"><img src="Photos/perro.jpg" alt="mi perro" class="image">
+            </div>
+            <p>
+                Él es DoggyDoggy, un perro que le gusta molestar a los demás, hacer daños
+                y acabar con todo.
+            </p>
+        </article>
+
+        <article class="catw"> <!-- espacio especifico para la cuarta tarjeta a mostrar con foto y texto -->
+            <img src="Photos/otrogato.jpeg" alt="gato triste" class="image">
+            <p>
+                No está triste... está decepcionado con la calidad existencial de su cama. 
+                Es un alma dramática que ha descubierto la pesada carga de la vida: tener que mover 
+                una pata para alcanzar su juguete favorito.
+            </p>
+        </article>
+
+        <article class="doggyw"> <!-- espacio especifico para la quinta tarjeta a mostrar con foto y texto -->
+            <img src="Photos/otroperro.jpg" alt="perro mal" class="image">
+            <p>
+                Conoce a Capitán, un perro de distinguido linaje cuyo procesador mental opera 
+                consistentemente con un lag de dos segundos. 
+                El Capitán no tiene fallas, solo una interpretación muy personal de la realidad.
+            </p>
+        </article>
+
+        <article class="catr"> <!-- espacio especifico para la sexta tarjeta a mostrar con foto y texto -->
+            <img src="Photos/ungato.jpg" alt="gato perdido" class="image">
+            <p>
+                Sus maullidos son suspiros traducidos, 
+                sus siestas, escapismos filosóficos. Vive en un estado de perpetuo 'casi' sollozo, 
+                convencido de que le falta algo vital, vivir.
+            </p>
+        </article>
+    </main>
 </body>
 </html>

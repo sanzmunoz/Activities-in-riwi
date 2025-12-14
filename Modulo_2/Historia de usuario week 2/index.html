@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> <!-- Se agrega enlaza el archivo css y se agrega una fuente desde google -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="./styles_one.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="ppal">
+    <header class="ppal"> <!-- se agrega titlo y link para avanzar -->
         Santiago Muñoz Z. 
             <a>Sobre mi</a>
             <a>Habilidades</a>
@@ -15,8 +18,8 @@
             <a href="mascotas.html" target="_parent">Mis mascotas</a>
     </header><br>
 
-    <article class="caracter">
-        <header class="about">
+    <article class="caracter"> <!-- creacion de un contenedor para varios elementos -->
+        <header class="about"> <!-- creacion de primer elemento a ubicar -->
             <h2>Sobre Mi</h2>
             <p>Me gusta leer literatura, soy un futuro ingeniero, enfocado en la lógica y la construcción, 
                 pero que encuentra su verdadero equilibrio en la conexión. Mi espíritu analítico, 
@@ -25,14 +28,14 @@
                 aquella que combina conocimiento, aire libre y compañía.</p>
         </header>
 
-        <header class="habilities">
+        <header class="habilities"> <!-- creacion de segundo elemento a ubicar -->
             <h2>Mis habilidades</h2>
             <ul>- Trabajo en equipo</ul>
             <ul>- Escucha activa</ul>
             <ul>- Motivación al cambio</ul>
         </header>
 
-        <header class="contact">
+        <header class="contact"> <!-- creacion de tercer elemento a ubicar -->
             <h2>Contacto</h2>
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" placeholder="Escribe tu nombre">
@@ -41,6 +44,5 @@
             <button type="submit">Enviar información</button>
         </header>
     </article>
-    
 </body>
 </html>

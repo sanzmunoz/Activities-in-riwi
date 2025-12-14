@@ -1,34 +1,95 @@
+body { /*Se agregan modificaciones generales para el cuerpo*/
+    background-color: rgb(77, 47, 8);
+    font-family: "Geom", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 70px 70px;
+}
 
-header {
-    text-align: left;
+header { /*modificaciones generales para la parte superior de la pagina*/
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
     padding-left: 10%;
     background-color: rgb(109, 75, 19);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
     border-radius: 70px;
+    gap: 80px;
 }
-.pet {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 23px;
-    font-style:italic;
-    box-shadow: 1px 2px 12px orange;
-    border-radius: 7px;
+main { /*en esta area especial se crean las cuadriculas donde se ubicara la informacion*/
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.5fr 2fr;
+    grid-template-rows: 2fr 2fr;
+    grid-template-areas:
+    "a1 a3 a4 a6"
+    "a2 a3 a5 a6";
+    gap: 10px;
 }
-
-.image {
-    width: 200px;
-    height: 200px;
-    border: 7px solid rgb(121, 67, 9);
-    border-radius: 15px;
-}
-
-.tarjeta1 {
+.cato{ /*modificacion especifica de un contenido*/
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    grid-area: a3;
+    text-align: center;
+}
+.hamster { /*modificacion especifica de un contenido*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    grid-area: a1;
+    border-radius: 30px;
+    text-align: center;
+}
+.doggy { /*modificacion especifica de un contenido*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    text-align: center;
+    grid-area: a2;
+}
+.catw { /*modificacion especifica de un contenido*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    text-align: center;
+    grid-area: a4;
 }
 
-body {
-    background-color: rgb(77, 47, 8);
-    font-family: Arial, sans-serif;
+.doggyw { /*modificacion especifica de un contenido*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    text-align: center;
+    grid-area: a5;
+}
+
+.catr { /*modificacion especifica de un contenido*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    text-align: center;
+    grid-area: a6;
+}
+.image { /*modificacion especifica que estandariza las imagenes*/
+    width: 200px;
+    height: 200px;
+    border: 5px solid rgb(209, 112, 9);
+    border-radius: 15px;
 }

@@ -5,7 +5,6 @@ body {
     display: flex;
     justify-content: center;
 }
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -28,8 +27,58 @@ body {
     padding: 20px 35px;
     border-radius: 14px;
 }
-.sectionFrist {
+.sectionFirst {
+    display: flex;
+    height: 515px;
+    margin-bottom: 70px;
+}
+.sectionFirst__article{
+    height: 481px;
+    width: 531px;
+}
+.sectionFirst__h1{
+    font-weight: 400;
+    font-size: 58px;
+}
+.bocina {
+    width: 600.46px;
+    height: 515px;
+}
+.sectionFirst__p{
+    font-size: 20px;
+    line-height: 28px;
+}
+.sectionFirst__button {
+    background-color: rgb(0, 0, 0);
+    border-radius: 14px;
+    padding: 20px 35px;
+    font-size: 20px;
+    color: white;
+}
+.publicidad {
     display: flex;
     justify-content: space-between;
+    height: 48px;
+    position: 723px;
 }
-
+.services {
+    display: flex;
+    margin-top: 90px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+.services__tittle {
+    display: flex;
+    background-color: rgb(128, 255, 0);
+    height: 51px;
+    width: 178px;
+    align-items: center;
+    font-size: 43px;
+    padding: 0px 10px;
+    border-radius: 8px;
+}
+.services__text {
+    height: 46px;
+    width: 580px;
+    margin-left: 30px;
+}

@@ -1,49 +1,40 @@
-body {
+body { /*contiene todo el cuerpo*/
     background-color: rgb(67, 67, 226);
     padding: 100px 100px;
+    font-family: "Geom", sans-serif;
+    font-weight: 500;
 }
-
-.ppal {
+.ppal { /*modifica labarra superior */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    border: 2px solid black;
+    border: 5px solid black;
+    border-radius: 70px;
+    background-color: rgb(255, 255, 255);
+    font-style: italic;
+    font-size: 25px;
 }
-
-.caracter {
+.caracter { /* crea 3 columnas y alinea elementos */
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
     gap: 20px;
+    align-items: flex-start;
 }
-
-.about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about { /*modifica los elementos dentro de la primer columna*/
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
+    background-color: rgb(74, 85, 255);
 }
-
-.habilities {
+.habilities { /*modifica los elementos dentro de la segunda columna*/
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
+    background-color: rgb(50, 64, 253);
 }
-
-.contact {
+.contact { /*modifica los elementos dentro de la tercer columna*/
     border: 2px solid black;
     border-radius: 10px;
-    padding: 10px;
-    display: grid;
-    grid-template: 30% / 70%;
+    padding: 30px;
+    background-color: rgb(74, 85, 255);    
 }
-
-/* h2{
-    background-color: rgb(18, 15, 230);
-    text-align: center;
-    margin: 20px;
-    border-radius: 8px;
-    padding: 10px;
-
-} */
