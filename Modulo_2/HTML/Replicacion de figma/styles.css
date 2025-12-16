@@ -80,3 +80,21 @@ body {
     height: 46px;
     width: 580px;
 }
+.tarjetas {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "tarjeta1 tarjeta2" "tarjeta3 tarjeta4" "tarjeta5 tarjeta6";
+    gap: 20px;
+    
+}
+.cube_1{
+    display: flex;
+    background-color: greenyellow;
+    border: 2px;
+    border-radius: 14px;
+}
+.tarjetas {
+    height: 20px;
+    width: 30px;
+}
