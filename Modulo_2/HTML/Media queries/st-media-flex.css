@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+.item{
+    background-color: green;
+    color: yellow;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+}
+/* Tablets (768px y más) 48em*16px/em=768px */
+@media(min-width: 48em){
+    body {
+        background-color: yellowgreen;
+    }
+    .container{
+        flex-direction:row;
+        flex-wrap: wrap;
+    }
+    .item{
+        /* Es una propiedad abreviada que 
+        combina flex-grow, flex-shrink y flex-basis*/
+        flex:3 4 calc (50% - 1rem);
+    }
+}
+/*desktop 1024 y mas */
+@media (min-width:64em){
+    .item{
+        flex: 1 1 calc(33.333% - 1rem);
+    }
+}

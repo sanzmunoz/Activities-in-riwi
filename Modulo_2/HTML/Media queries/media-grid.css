@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.grid-item {
+  background-color: #2ecc71;
+  color: rgb(0, 17, 255);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+}
+/* Tablets 768 px y mas */
+@media (min-width: 48em) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Desktop 1024px y mas */
+@media (min-width: 64em) {
+  .grid-container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Large Desktop 1280px y mas */
+@media (min-width: 80em){
+  .grid-container{
+    grid-template-columns: repeat(4,1fr);
+  }
+}
