@@ -83,6 +83,9 @@
     height: 20rem;
     width: 20rem;
 }
+.puntot:hover{
+    background-color: aqua;
+}
 .information h3,h4{
     max-width: 150px; /* Ajusta este valor según el largo de tu texto */
     line-height: 1.2;  /* Controla el espacio entre las dos líneas */
