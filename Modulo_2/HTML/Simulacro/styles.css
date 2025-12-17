@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card {
+    background-color: rgb(255, 81, 0);
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 4em;
+    padding: 1rem 2rem;
+}
+.logo{
+    height: 3rem;
+    width: 7rem;
+}
+.navbar{
+    padding: 1.5rem 2rem;
+    background-color: rgb(255, 81, 0);
+    color: #fff
+}
+.checkbtn{
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.nav-mobile{
+    display: none;
+}
+#check:checked~.nav-mobile{
+    display: block;
+}
+/*mobile*/
+/* @media(max-width: 768px){
+    .menu.btn{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .menu.btn span{
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+    .nav-links{
+        display: none/*esconde el menu*/;
+        /* position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #444;
+        flex-direction: column;
+        text-align: center;
+    } */
+    /* .nav-links a{padding: 15px 0;}
+    /*Si el checkbox esta marcado muestra el menu*/
+    /* .menu-checkbox:checked ~.nav-links{
+        display: flex;
+    } */
+/*}*/

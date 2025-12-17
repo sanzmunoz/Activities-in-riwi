@@ -1,34 +1,20 @@
-
-header {
-    text-align: left;
-    padding-left: 10%;
-    background-color: rgb(109, 75, 19);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
-    border-radius: 70px;
-}
-.pet {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 23px;
-    font-style:italic;
-    box-shadow: 1px 2px 12px orange;
-    border-radius: 7px;
-}
-
-.image {
-    width: 200px;
-    height: 200px;
-    border: 7px solid rgb(121, 67, 9);
-    border-radius: 15px;
-}
-
-.tarjeta1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 body {
-    background-color: rgb(77, 47, 8);
-    font-family: Arial, sans-serif;
+    background-color: rgb(67, 67, 226);
+}
+nav {
+    background-color: rgb(9, 22, 134);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+nav a {
+    color: rgb(201, 201, 201);
+    padding: 10px;
+    cursor:copy;
+}
+h2{
+    background-color: rgb(18, 15, 230);
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+    padding: 10px;
 }
