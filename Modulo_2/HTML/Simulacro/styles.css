@@ -15,6 +15,8 @@
     width: 7rem;
 }
 .navbar{
+    display: flex;
+    justify-content: space-between;
     padding: 1.5rem 2rem;
     background-color: rgb(255, 81, 0);
     color: #fff
@@ -25,36 +27,109 @@
     cursor: pointer;
 }
 .nav-mobile{
-    display: none;
+    display: none
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #check:checked~.nav-mobile{
     display: block;
 }
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.text h2{
+    padding: 0 0 1rem 0;
+}
+.text p{
+    padding: 0 0 2rem 0;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.first{
+    border-radius: 1rem;
+    width: 6rem;
+    height: 2rem;
+    color: orangered;
+    border-color: white;
+
+    background-color: rgb(255, 255, 255);
+}
+.second{
+    border-radius: 1rem;
+    width: 6rem;
+    height: 2rem;
+    color: white;
+    background-color: orangered;
+    border-color: white;
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    margin: 6rem;
+}
+.puntot{
+    height: 20rem;
+    width: 20rem;
+}
+.information h3,h4{
+    max-width: 150px; /* Ajusta este valor según el largo de tu texto */
+    line-height: 1.2;  /* Controla el espacio entre las dos líneas */
+    text-align:center;
+}
+.information p{
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.2;
+}
+
+
 /*mobile*/
-/* @media(max-width: 768px){
-    .menu.btn{
+@media(min-width: 768px){
+    .navbar{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 5px;
     }
-    .menu.btn span{
+    .navbar__menu{
         width: 25px;
         height: 3px;
-        background-color: white;
     }
-    .nav-links{
-        display: none/*esconde el menu*/;
-        /* position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background-color: #444;
-        flex-direction: column;
-        text-align: center;
-    } */
-    /* .nav-links a{padding: 15px 0;}
-    /*Si el checkbox esta marcado muestra el menu*/
-    /* .menu-checkbox:checked ~.nav-links{
+    #check, .nav-mobile{
+        display: none;
+    }
+    .nav-mobile {
+        display: block; 
+    }
+
+    .nav-mobile a {
         display: flex;
-    } */
-/*}*/
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+/* Teléfonos pequeños (0–480px) / /
+@media (max-width: 480px) { body { background-color: lightcoral; }
+}
+/ / Teléfonos grandes y tablets pequeñas (481–768px) / /
+@media (min-width: 481px) and (max-width: 768px) { body { background-color: lightblue; }
+}
+/ / Tablets y laptops pequeñas (769–1024px) / /
+@media (min-width: 769px) and (max-width: 1024px) { body { background-color: lightgreen; }
+}
+/ / Laptops y escritorios grandes (1025px en adelante) */
+@media (min-width: 1025px) { body { background-color: lightgray; }
+}
