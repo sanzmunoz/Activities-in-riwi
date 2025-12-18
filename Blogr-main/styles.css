@@ -1,0 +1,447 @@
+/* =====================
+   RESET + BASE
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Overpass", sans-serif;
+    font-size: 16px;
+    color: hsl(207, 13%, 34%);
+}
+
+/* =====================
+   HEADER
+===================== */
+.mainHeader {
+    background-image:
+        url("./images/bg-pattern-intro-desktop.svg"),
+        linear-gradient(135deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-repeat: no-repeat;
+    background-size: 200%, cover;
+    background-position: 30% 50%, center;
+    color: white;
+    border-bottom-left-radius: 100px;
+    padding: 60px 50px 120px;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+}
+
+/* =====================
+   HAMBURGER MENU
+===================== */
+.menuToggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+
+.navMenu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navMenu > li {
+    position: relative;
+    cursor: pointer;
+}
+
+.navMenu > li::after {
+    content: "";
+    display: inline-block;
+    background: url("./images/icon-arrow-light.svg") no-repeat center;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+}
+
+.navMenu > li:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   DROPDOWN
+===================== */
+.dropDown {
+    list-style: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: white;
+    color: hsl(207, 13%, 34%);
+    padding: 20px;
+    border-radius: 6px;
+    display: none;
+    min-width: 150px;
+}
+
+.dropDown li {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.dropDown li:hover {
+    font-weight: bold;
+}
+
+.navMenu li:hover .dropDown {
+    display: block;
+}
+
+/* =====================
+   NAV ACTIONS
+===================== */
+.navActions a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-family: "Ubuntu", sans-serif;
+}
+
+.buttonPrimary {
+    background: transparent;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.buttonPrimary:hover {
+    background: white;
+    color: hsl(355, 100%, 74%);
+}
+
+.buttonSecondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonSecondary:hover {
+    background: white;
+    color: hsl(355, 100%, 74%);
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: hsl(0, 0%, 90%);
+}
+
+.heroButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* =====================
+   FEATURES
+===================== */
+.features {
+    padding: 120px 60px;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 32px;
+    color: hsl(208, 49%, 24%);
+    margin-bottom: 80px;
+}
+
+.featuresContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.featuresContainer.reverse {
+    flex-direction: row-reverse;
+}
+
+.featuresText {
+    width: 40%;
+}
+
+.featuresText h3 {
+    color: hsl(208, 49%, 24%);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.featuresText p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.featuresImage {
+    width: 45%;
+}
+
+.featuresImage img {
+    width: 100%;
+    position: relative;
+}
+
+/* desplazamiento de imágenes desktop */
+.featuresContainer:not(.reverse) .featuresImage img {
+    left: 20%;
+}
+
+.featuresContainer.reverse .featuresImage img {
+    right: 20%;
+}
+
+/* =====================
+   CONTROL DE IMÁGENES RESPONSIVE
+===================== */
+.imgMobile {
+    display: none;
+}
+
+/* =====================
+   STATE OF THE ART
+===================== */
+.stateArt {
+    background: linear-gradient(135deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+    border-top-right-radius: 100px;
+    margin: 100px 0;
+    color: white;
+}
+
+.stateArtContainer {
+    display: flex;
+    align-items: center;
+    padding: 100px 60px;
+    background-image: url("./images/bg-pattern-circles.svg");
+    background-repeat: no-repeat;
+    background-position: -200px center;
+}
+
+.stateArtImage img {
+    width: 350px;
+    position: relative;
+    top: -60px;
+}
+
+.stateArtText {
+    width: 50%;
+}
+
+.stateArtText h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.stateArtText p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: hsl(240, 2%, 79%);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: hsl(240, 10%, 16%);
+    color: hsl(240, 2%, 79%);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 80px 0;
+}
+
+.footerLogo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 12px;
+    line-height: 2.2;
+}
+
+/* =====================
+   ATTRIBUTION
+===================== */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+
+    .mainHeader {
+        padding: 40px 25px;
+        text-align: center;
+    }
+
+    .navBar {
+        position: relative;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .navMenu {
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        color: hsl(208, 49%, 24%);
+        width: 90%;
+        border-radius: 10px;
+        padding: 30px;
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .navMenu > li::after {
+        background: url("./images/icon-arrow-dark.svg") no-repeat center;
+    }
+
+    .navMenu li {
+        color: white;
+    }
+    
+    .navMenu li {
+        color: hsl(208, 49%, 24%);
+        font-weight: 600;
+    }    
+
+    .dropDown {
+        position: static;
+        background: transparent;
+        padding: 10px 0;
+        display: none;
+    }
+
+    .dropDown li {
+        color: hsl(207, 13%, 34%);
+    }    
+
+    .navMenu li:hover .dropDown {
+        display: block;
+    }
+
+    .navActions {
+        position: absolute;
+        top: calc(70px + 260px);
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 90%;
+    }
+
+    /* 🔥 MAGIA: ABRIR MENU */
+    .menuToggle:checked ~ .navMenu {
+        display: flex;
+    }
+
+    .menuToggle:checked ~ .navActions {
+        display: flex;
+    }
+
+    /* IMAGES */
+    .imgDesktop {
+        display: none;
+    }
+
+    .imgMobile {
+        display: block;
+        width: 100%;
+    }
+
+    .features {
+        padding: 80px 20px;
+    }
+
+    .featuresContainer,
+    .featuresContainer.reverse {
+        flex-direction: column;
+    }
+
+    .featuresText,
+    .featuresImage {
+        width: 100%;
+        text-align: center;
+    }
+
+    .featuresImage img {
+        position: static;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+}
