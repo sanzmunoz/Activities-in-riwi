@@ -1,0 +1,40 @@
+body { /*contiene todo el cuerpo*/
+    background-color: rgb(67, 67, 226);
+    padding: 100px 100px;
+    font-family: "Geom", sans-serif;
+    font-weight: 500;
+}
+.ppal { /*modifica labarra superior */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 70px;
+    background-color: rgb(255, 255, 255);
+    font-style: italic;
+    font-size: 25px;
+}
+.caracter { /* crea 3 columnas y alinea elementos */
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 20px;
+    align-items: flex-start;
+}
+.about { /*modifica los elementos dentro de la primer columna*/
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(74, 85, 255);
+}
+.habilities { /*modifica los elementos dentro de la segunda columna*/
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(50, 64, 253);
+}
+.contact { /*modifica los elementos dentro de la tercer columna*/
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgb(74, 85, 255);    
+}
