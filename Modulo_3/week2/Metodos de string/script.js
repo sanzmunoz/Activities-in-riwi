@@ -65,10 +65,12 @@ const month = {
     3:"marzo",
 }
 
-let buton = document.getElementById("date")
+let buton = document.getElementById("date");
 buton.addEventListener("click",()=> {
+    const finallyDate=`Hoy es ${days[day]} de ${date} y la hora es ${hour}`;
+    if (resultDate) resultDate.textContent = finallyDate
     console.log(`Hoy es ${days[day]} de ${date} y la hora es ${hour}`);
-})
+})//pendiente organizar en funciuon aparte
 
 let name = "santiago"
 
