@@ -14,3 +14,6 @@ callBack:
 
     TERMINAR DE LEER CLASE 3
     PRIORIDAD ENTERDER ASYNG AWAIT Y LUEGO IMPLEMENTAR TRY-CATCH
+
+fetch() :
+    Herramienta de JavaScript para pedir datos a un servidor a través de internet. Se usa para traer información (como el clima, una lista de productos o usuarios) desde una URL (API) sin tener que recargar la página.

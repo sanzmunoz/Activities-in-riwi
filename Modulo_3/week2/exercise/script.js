@@ -101,7 +101,7 @@ promise
     console.log(result); // "First operation completed"
     });
 */
-
+/*
 async function procesarDatos() {
     console.log('inicio');
     let resultado = await new Promise((resolve)=>{
@@ -112,3 +112,61 @@ async function procesarDatos() {
 }
 procesarDatos();
 console.log('Despues');
+*/
+//-----------------
+//  TRY/CATCH
+
+async function operacionConError() {
+    try{
+        let resultado = await fetch(
+          "https://jsonplaceholder.typicode.com/users/1"
+        );
+        let datos = await resultado.json();
+        console.log(datos);
+    }catch(error){
+        console.log("error capturado", error.message);
+    }
+}
+
+operacionConError()
+
+async function obtenerUsuario() {
+    try{
+        const respuesta= await fetch('https://jsonplaceholder.typicode.com/users/1');
+        const datos = await respuesta.json();
+        console.log(datos.name);
+    }catch(error){
+        console.log("error al conectar",error);
+    }
+}
+obtenerUsuario()
+
+async function procesarMultiples() {
+    try{
+        const usuario = await fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(r => r.json());
+
+        const posts = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${usuario.id}`)
+            .then(r=>r.json());
+        console.log(`${usuario.name} tiene ${posts.length} posts`);
+    }catch(error){
+        console.log('error', error);
+    }
+}
+
+procesarMultiples()
+
+async function opereacionConFinally() {
+    try{
+        let resultado = await new Promise((resolve,reject)=>{
+            setTimeout(()=>reject('error simulado'),3000);
+        });
+        console.log(resultado);
+    }catch(error){
+        console.log('Error',error);
+    }finally{
+        console.log('operacion completada(con o sin error)');
+    }
+}
+
+opereacionConFinally();
