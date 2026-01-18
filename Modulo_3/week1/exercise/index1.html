@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="module" src="./script1.js"></script>
 </head>
 <body>
     <h1>Lista de tareas</h1>
-
+    
     <section>
         <h2>Agrega tareas</h2>
         <label for="myInput">Tarea: </label>
         <input id="myInput" placeholder="Escribe Aqui...">
-        <button id="addButon">Agregar</button>
-
+        <button id="addButon" type="button">Agregar</button>
+        
+        
         <label for="otherInput">Eliminar Tarea: </label>
-        <input id="otherInput" placeholder="Cual vas a eliminar?">
+        <input id="delTask" placeholder="Cual vas a eliminar?">
         <button id="delButon">Eliminar</button>
         <div id="contador"></div>
+        <ul id="taskList">Lista de tareas: </ul>
+        <script type="module" src="./script1.js"></script>
     </section>
 </body>
 </html>
