@@ -1,14 +1,16 @@
 let task =[];
 let num = 0;
 const list = document.getElementById("taskList")
+const miboton = document.getElementById("addButon");
+let contador = document.getElementById("contador")
+let tittle;
+let input = document.getElementById("myInput");
 
 function increment(){
     num++;
     console.log(`tarea N°${num}`);
     contador.innerHTML = `<h2>¡Agregaste la tarea N°${num}!</h2>`;
 }
-
-const miboton = document.getElementById("addButon");
 
 miboton.addEventListener('click', ()=> {
     const newTask = input.value.trim(); //quitamos espacios
@@ -20,9 +22,6 @@ miboton.addEventListener('click', ()=> {
     }
 });
 
-let contador = document.getElementById("contador")
-let tittle;
-let input = document.getElementById("myInput");
 input.addEventListener("input", (event) => {
     console.log("el texto es: ", event.target.value);
     tittle = event.target.value    

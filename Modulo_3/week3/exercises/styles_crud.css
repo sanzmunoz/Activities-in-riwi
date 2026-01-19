@@ -1,0 +1,13 @@
+body{
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.boton{
+    background-color: rgb(248, 169, 51);
+    border-radius: 20px;
+}
+.add, .editTask, .deleteTask{
+    padding: 20px;
+}

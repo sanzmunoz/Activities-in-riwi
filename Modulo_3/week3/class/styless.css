@@ -1,0 +1,32 @@
+.title{
+    color: red
+}
+.button{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #68b467;
+    border-radius: 40px;
+}
+.containerCards{
+    display: flex;
+    gap: 10px;
+    width: 800px;
+    margin-top: 40px;
+}
+
+.card{
+    width: 100px;
+    height: 80px;
+    border-radius: 20px;
+    background-color: blanchedalmond;
+}
+
+.card-orange{
+    background-color: orange;
+}
+
+.card-blue{
+    background-color: orange;
+}

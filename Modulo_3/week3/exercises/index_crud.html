@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tareas</title>
+    <link rel="stylesheet" href="./styles_crud.css">
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    
+    <article>
+        <section class="add">
+            <h2>Agrega tareas</h2>
+            <label for="myInput">Tarea: </label>
+            <input id="myInput" placeholder="Escribe Aqui...">
+            <button id="addButon" type="button" class="boton">Agregar</button>
+        </section>
+        <section class="editTask">
+            <label for="editInput">Editar tarea</label>
+            <input type="text" placeholder="Tarea a editar...">
+            <!-- <button class="boton" id="butonEdit">Ver tareas <ic class="bx"></ic></button> -->
+            <input type="text" placeholder="Nuevo nombre...">
+            <button id="edit" type="button" class="boton">Editar</button>
+        </section>
+        <section class="deleteTask">
+            <label for="otherInput">Eliminar Tarea: </label>
+            <input id="delTask" placeholder="Cual vas a eliminar?">
+            <button id="delButon" class="boton">Eliminar</button>
+            <div id="contador"></div>
+            <ul id="taskList">Lista de tareas: </ul>
+            <script type="module" src="./script_crud.js"></script>
+        </section>
+    </article>
+</body>
+</html>
