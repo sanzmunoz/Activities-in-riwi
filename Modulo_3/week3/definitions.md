@@ -5,6 +5,11 @@ Los atributos son los que acompañan la etiqueta en html
 Se pueden agregar atributos a la etiquita desde JS 
 
 VITE:
+    Empaquetador de modulos moderno y un servidor de desarrollo con velocidad en mente.
+
+    Creacion de vite nuevo:
+    en consola y en la carpeta: npm create vite@lasted
+
 Es una herramienta de desarrollo frontend, diseñada para proporcionar 
 una experiencia de desarrollo extremadamente rápida y ágil.  
 Creada por Evan You, el creador de Vue.js, Vite aprovecha las capacidades 
@@ -24,3 +29,10 @@ Soporte multi-framework: Compatible con React, Vue, Svelte, Lit, Preact, TypeScr
 JSX, CSS, Sass, PostCSS, y más. 
 Extensible: Puede integrarse con plugins existentes de Rollup y ofrece una API de 
 plugin para personalizar su comportamiento
+
+npm:
+    node packpage mangment
+    gestor de paquetes oficial de Node.js que permite instalar gestionar y compartir librerias de JS
+
+serviodor web:
+    programa que procesa una aplicacion del lado del servidor
