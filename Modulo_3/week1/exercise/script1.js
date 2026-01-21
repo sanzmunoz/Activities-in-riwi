@@ -40,3 +40,17 @@ function renderTasks() {
         list.appendChild(li);
     });
 }
+
+function deltaks(task){
+    //recibir el input
+    //ciclar para determinar si existe y en caso de que no muestre mensaje
+    //guardar posicion y eliminar esa posicion 
+}
+// para eliminar el elemento de un array busco su posicion y asigno esa 
+// posicion a una variable o no y con esa posicion busco y elimino el elemento del array
+
+//seccion de pruebas en boton
+const pruebas = document.getElementById("pruebas")
+pruebas.addEventListener('mouseout',()=>{
+    console.log("paso por boton");
+})

@@ -5,6 +5,8 @@ import './styles/about.css'
 import './styles/globals.css'
 import './styles/contact.css'
 
+let globalRoute;
+
 document.body.addEventListener("click",(e)=>{
   if(e.target.matches("[data-link]")){
     e.preventDefault(); //evita que que recarge toda la pagina
@@ -13,6 +15,7 @@ document.body.addEventListener("click",(e)=>{
   }
 });
 async function navigate(pathname) {
+  globalRoute = pathname
   const route = routes[pathname];
 
   const resp = await fetch(route);
@@ -22,8 +25,15 @@ async function navigate(pathname) {
   return html;
 }
 
+if (pathname == "./login"){
+  let userInput = document.getElementById("userInput");
+  let pass = document.getElementById("passInput");
 
-
+  userInput.addEventListener("input", (e)=>{
+    console.log(e.target.value)
+  })
+  console.log("estamos en la vista de login");
+}
 
 // import javascriptLogo from './javascript.svg'
 // import viteLogo from '/vite.svg'
