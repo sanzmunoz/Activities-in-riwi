@@ -18,10 +18,21 @@ Se pueden agregar atributos a la etiquita desde JS
     programa que procesa una aplicacion del lado del servidor
 
 ### LocalStorage:
-    usa el navegador para guardar informacion del usuario del usuario, los datos se mantienen hasta que se limpien y almacena de 5 a 10MB por dominio y los datos se almacenan por string pares clave-valor
-    Conocido como una api del navegador
+    API del navegador para guardar informacion del usuario de manera persistente, los datos se mantienen hasta que se limpien intencionalmente y almacena de 5 a 10MB por dominio y los datos se almacenan por string pares clave-valor
+    Los datos son accesibles desde cualquier pagina del mismo origen o dominio
+    Usado cuando se necesita que los datos persistan mas alla de la sesion del usuario.
 
-### Eventos comunes:
+### Métodos clave del Local Storage:
+    .setItem(key, value):   Guarda datos en local Storage.
+    .getItem(key):          Recupera los datos guardados.
+    .removeItem(key):       Elimina un dato especifico almacenado en LocalStorage
+    .clear():               Elimina todos los datos almacenados en LS
+
+### Session Storage:
+    Tiene una diferencia clave, los datos guardados en session storage solo se mantienen diponibles durante la sesion actual, pero cuando el navegador se cierra los datos se eliminan automaticamente
+    tiene los mismos metodos que el localStorage.
+
+### Eventos comunes de click y teclado:
         De clic
     'click' :se activa cuando el usr hace clic
     'dblclick': se activa cuando el usr hace doble clic

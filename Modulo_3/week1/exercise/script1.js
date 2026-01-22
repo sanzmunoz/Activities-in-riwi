@@ -36,8 +36,18 @@ function renderTasks() {
     //recorrer el arreglo y crear etiqueta <li> por tarea
     task.forEach(function(item) {
         const li = document.createElement("li");
+        const del = document.createElement("p")
+
         li.textContent = item;
-        list.appendChild(li);
+        del.textContent="eliminar"
+
+        del.addEventListener("click", (event)=>{
+        console.log(event.target.closest("li").remove())
+        })
+
+        li.append(del);
+
+        list.append(li);
     });
 }
 

@@ -1,0 +1,36 @@
+body{
+    background-color: blanchedalmond;
+    padding: 5%;
+}
+
+.add{
+    display: flex;
+}
+
+.myInput{
+    border-radius: 20%;
+}
+.addButon{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 3rem;
+    background-color: red;
+    font-size: 90%;
+}
+.button__active{
+    background-color: green;
+    color: white;
+}
+.button__inactive{
+    background-color: red;
+    color: black;
+}
+
+.delbuton{
+    background-color: red;
+    
+}
+.caja_del{
+    display: flex;
+    gap: 10px;
+}
