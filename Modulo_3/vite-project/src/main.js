@@ -1,11 +1,11 @@
-import { routes } from './constants/routes';
-import './styles/home.css'
-import './styles/login.css'
-import './styles/about.css'
-import './styles/globals.css'
-import './styles/contact.css'
+import "./styles/globals.css"
 
-let globalRoute;
+export const routes = {
+  "/home": "./views/home.html",
+  "/login": "./views/login.html",
+  "/about": "./views/about.html",
+  "/contact": "./views/contact.html"
+};
 
 document.body.addEventListener("click",(e)=>{
   if(e.target.matches("[data-link]")){
@@ -14,47 +14,81 @@ document.body.addEventListener("click",(e)=>{
     navigate(route);
   }
 });
+
 async function navigate(pathname) {
-  globalRoute = pathname
-  const route = routes[pathname];
-
-  const resp = await fetch(route);
+  const routeEnd = routes[pathname];
+  const resp = await fetch(routeEnd);
   const html = await resp.text();
+  document.getElementById("app").innerHTML = html
+  
+  //ejecutar logica especifica de cada vista
+  const viewHandlers = {
+    "/login": initLogin,
+    "/home": initHome,
+    "/about": initAbout,
+    "/contact": initContact,
+  };
 
-  document.querySelector("#app").innerHTML = html
-  return html;
+  if(viewHandlers[pathname]){
+    viewHandlers[pathname]();
+  }
 }
 
-if (pathname == "./login"){
-  let userInput = document.getElementById("userInput");
-  let pass = document.getElementById("passInput");
+function initLogin() {
+  // se crean variables a las cuales se le asigna elementos del dom
+  let userInput = document.getElementById('userInput');
+  let passInput = document.getElementById('passInput');
+  let buttonInput =document.getElementById('buttonLogin');
 
+  let user;
+  let pass;
+  
+  //Tres escuchadores de eventos para variables antes declaradas
   userInput.addEventListener("input", (e)=>{
-    console.log(e.target.value)
-  })
-  console.log("estamos en la vista de login");
+    user = e.target.value;
+  });
+
+  passInput.addEventListener("input", (e) => {
+    pass = e.target.value;
+  });
+
+  buttonInput.addEventListener("click", (e) => {
+    //Condicional verificador de usuario y contraseña
+    if (user === "santi" && pass === "123456"){
+      console.log("inicio de sesión");
+      
+      //creacion de un objeto que agrupa la información del usuario
+      const userObjet = {
+        userName: user,
+        userPass: pass,
+        isActive: true,
+        role:"admin"
+      };
+
+      console.log(userObjet);
+
+      /* Uso del metodo JSON... , su funcion es convertir el objeto de 
+      JS en string con formato JSON para poder almacenarlo localmente
+      */
+      console.log(JSON.stringify(userObjet));
+      
+      /* solo demuestra el dato guardado ya es solo string */
+      console.log(typeof JSON.stringify(userObjet));
+
+      /*Guarda la informacion en el almacenamiento local
+      --> "userData" es la llame o nombre del archivo
+      --> el estring del objeto es el valor */
+      localStorage.setItem("userData", JSON.stringify(userObjet));
+
+      //Guarda la contraseña en el almacenamiento de sesion.
+      // estos datos se borran cuando se cierra el navegador
+      sessionStorage.setItem("pass", pass);
+    } else {
+      console.log("no tiene acceso");
+    }
+  });
 }
 
-// import javascriptLogo from './javascript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
+function initHome(){
 
-// document.querySelector('#app').innerHTML = `
-//   <div>
-//     <a href="https://vite.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
-
-// setupCounter(document.querySelector('#counter'))
+}
