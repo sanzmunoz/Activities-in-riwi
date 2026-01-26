@@ -1,0 +1,62 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Juan Pérez",
+            "email": "juan@example.com",
+            "edad": 28,
+            "ciudad": "Madrid"
+        },
+        {
+            "id": 2,
+            "nombre": "María García",
+            "email": "maria@example.com",
+            "edad": 25,
+            "ciudad": "Barcelona"
+        }
+    ],
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Laptop",
+            "precio": 899,
+            "stock": 5
+        },
+        {
+            "id": 2,
+            "nombre": "Mouse",
+            "precio": 25,
+            "stock": 50
+        }
+    ],
+    "todos": [
+        {
+            "id": "1b35",
+            "titulo": "Aprender JS",
+            "descripcion": "",
+            "completado": true,
+            "fechaCreacion": "2026-01-26"
+        },
+        {
+            "id": "fa5b",
+            "titulo": "Aprender JSON SERVER",
+            "descripcion": "",
+            "completado": false,
+            "fechaCreacion": "2026-01-26"
+        },
+        {
+            "id": "39da",
+            "titulo": "aprender ReactJS",
+            "descripcion": "",
+            "completado": false,
+            "fechaCreacion": "2026-01-26"
+        },
+        {
+            "id": "1b91",
+            "titulo": "algo",
+            "descripcion": "",
+            "completado": false,
+            "fechaCreacion": "2026-01-26"
+        }
+    ]
+}
