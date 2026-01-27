@@ -5,11 +5,9 @@ body{
 
 .add{
     display: flex;
+    justify-content: center;
 }
 
-.myInput{
-    border-radius: 20%;
-}
 .addButon{
     width: 8rem;
     height: 2rem;
@@ -28,9 +26,18 @@ body{
 
 .delbuton{
     background-color: red;
-    
+    border-radius: 1rem;
 }
 .caja_del{
     display: flex;
     gap: 10px;
+}
+.taskList{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+li{
+    padding: 0.3rem;
 }

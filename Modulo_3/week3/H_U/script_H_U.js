@@ -3,21 +3,18 @@ let task =[];
 const list = document.getElementById("taskList")
 const miboton = document.getElementById("addButon");
 
-let contador = document.getElementById("contador")
-let tittle;
 let input = document.getElementById("myInput");
-
-function increment(){
-    contador.innerHTML = `<h2>¡Agregaste la tarea!</h2>`;
-}
+let tittle;
 
 //escuchador para cuando se hace clic
-miboton.addEventListener('mousedown', (boton)=> {
+miboton.addEventListener('mousedown', ()=> {
     miboton.classList.toggle('button__active');
     const newTask = {texto: input.value.trim(),
         completada: false
     }; //quitamos espacios
-    if (newTask !== ""){
+    if(newTask.texto === ""){
+        alert("no puedes agregar una tarea vacía")
+    }else if (newTask !== ""){
         task.push(newTask); //Se agrega al arreglo
         input.value = ""; //se limpia el input
         renderTasks(); // Se muestra la lista actualizada
@@ -34,6 +31,13 @@ input.addEventListener("input", (event) => {
     tittle = event.target.value    
 }); 
 
+//revisamos que tareas guardadas hay
+const saveTasks = localStorage.getItem("tasks");
+if(saveTasks){
+    task = JSON.parse(saveTasks);
+    renderTasks(); //muestra las tareas guardadas
+}
+
 // funcion que muestra las tareas agregadas
 function renderTasks() {
     //limpieza de lista
@@ -46,9 +50,9 @@ function renderTasks() {
         check.checked = item.completada;
         check.addEventListener('change',()=> {
             item.completada = check.checked;
+            localStorage.setItem("tasks", JSON.stringify(task));
             console.log(task);
-            //posicion para local storage
-        })
+        });
         
         const li = document.createElement("li");
         const del = document.createElement("button")
@@ -56,15 +60,16 @@ function renderTasks() {
         del.classList.add('delbuton')
         li.classList.add('caja_del')
         li.textContent = item.texto;
-        del.textContent="eliminar"
+        del.textContent="Eliminar"
 
         del.addEventListener("click", (event)=>{
-            event.target.closest("li").remove()
-            const index = task.indexOf(item)
+            event.target.closest("li").remove();
+            const index = task.indexOf(item);
             console.log(index);
             console.log(task);
             if(index > -1 ){
-                task.splice(index,1)
+                task.splice(index,1);
+                localStorage.setItem("tasks",JSON.stringify(task));
             }
             console.log(task);
         })
@@ -75,3 +80,4 @@ function renderTasks() {
         console.log(task);
     });
 }
+
