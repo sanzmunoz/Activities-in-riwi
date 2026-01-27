@@ -1,94 +1,93 @@
-import{ getUserById, getUsers } from "./services/user";
-import{
+import { allUsers, createUser, getUserById, getUsers } from "./services/user.js";
+import {
   getTodos,
   createTodo,
-  updatedTodo,
+  updateTodo,
   deleteTodo,
   markTodoAsComplete,
-} from "./services/todos";
-import "./styles/globals.css"
+} from "./services/todos.js";
+import "./styles/globals.css";
 
 export const routes = {
   "/home": "./views/home.html",
   "/login": "./views/login.html",
   "/about": "./views/about.html",
-  "/contact": "./views/contact.html"
+  "/contact": "./views/contact.html",
+  "/todolist": "./views/todoList.html",
 };
 
-//rutas publicas sin login
+// Rutas públicas (sin login)
 const publicRoutes = ["/login"];
 
-//Función para verificar si esta autenticado
+// Función para verificar si está autenticado
 function isAuthenticated() {
   const userData = localStorage.getItem("userData");
-  return userData && JSON.parse(userData).isActive
+  return userData && JSON.parse(userData).isActive;
 }
 
-//funcion para proteger rutas
+// Función para proteger rutas
 function checkRouteAccess(pathname) {
-  const isLogged = isAuthenticated();
+  const isLoggedIn = isAuthenticated();
 
-  //Si intenta acceder a login y ya esta logeado, redirige a home
-  if(pathname ==="/login" && isLoggedIn){
+  // Si intenta acceder a login y ya está logueado, redirige a home
+  if (pathname === "/login" && isLoggedIn) {
     return "/home";
   }
 
-  //Si intenta acceder a rutas protegidas sin loguear, redirige a login
-  if (!publicRoutes.includes(pathname)&& !isLoggedIn){
+  // Si intenta acceder a rutas protegidas sin loguear, redirige a login
+  if (!publicRoutes.includes(pathname) && !isLoggedIn) {
     return "/login";
   }
+
   return pathname;
 }
 
-
-document.body.addEventListener("click",(e)=>{
-  if(e.target.matches("[data-link]")){
-    e.preventDefault(); //evita que que recarge toda la pagina
+document.body.addEventListener("click", (e) => {
+  if (e.target.matches("[data-link]")) {
+    e.preventDefault();
     const route = e.target.getAttribute("href");
     navigate(route);
   }
 });
 
 async function navigate(pathname) {
-  //verificar acceso de la ruta
+  // Verificar acceso a la ruta
   const allowedRoute = checkRouteAccess(pathname);
 
   const routeEnd = routes[allowedRoute];
   const resp = await fetch(routeEnd);
   const html = await resp.text();
-  document.getElementById("app").innerHTML = html
-  
-  //ejecutar logica especifica de cada vista
+  document.getElementById("app").innerHTML = html;
+
+  // Ejecutar lógica específica de cada vista
   const viewHandlers = {
     "/login": initLogin,
     "/home": initHome,
     "/about": initAbout,
     "/contact": initContact,
+    "/todolist": initTodoList,
   };
 
-  if(viewHandlers[allowedRoute]){
+  if (viewHandlers[allowedRoute]) {
     viewHandlers[allowedRoute]();
   }
 }
 
 async function initLogin() {
-
   const result = await getUsers();
-  const user3 = await getUserById(3);
+  const user3 = await getUserById(1);
 
   console.log(result);
   console.log(user3);
-  
-  // se crean variables a las cuales se le asigna elementos del dom
-  let userInput = document.getElementById('userInput');
-  let passInput = document.getElementById('passInput');
-  let buttonInput =document.getElementById('buttonLogin');
+
+  let userInput = document.getElementById("userInput");
+  let passInput = document.getElementById("passInput");
+  let buttonInput = document.getElementById("buttonLogin");
 
   let user;
   let pass;
-  
-  //Tres escuchadores de eventos para variables antes declaradas
-  userInput.addEventListener("input", (e)=>{
+
+  userInput.addEventListener("input", (e) => {
     user = e.target.value;
   });
 
@@ -96,77 +95,145 @@ async function initLogin() {
     pass = e.target.value;
   });
 
-  buttonInput.addEventListener("click", (e) => {
-    //Condicional verificador de usuario y contraseña
-    if (user === "santi" && pass === "123456"){
-      console.log("inicio de sesión");
-      
-      //creacion de un objeto que agrupa la información del usuario
+  buttonInput.addEventListener("click", () => {
+    if (user === "santi" && pass === "123456") {
+      console.log("incio sesion");
+
       const userObjet = {
         userName: user,
         userPass: pass,
         isActive: true,
-        role:"admin"
+        role: "admin",
       };
 
-      /*Guarda la informacion en el almacenamiento local
-      --> "userData" es la llame o nombre del archivo
-      --> el estring del objeto es el valor */
       localStorage.setItem("userData", JSON.stringify(userObjet));
-
-      //Guarda la contraseña en el almacenamiento de sesion.
-      // estos datos se borran cuando se cierra el navegador
       sessionStorage.setItem("pass", pass);
 
-      /* Uso del metodo JSON... , su funcion es convertir el objeto de 
-      JS en string con formato JSON para poder almacenarlo localmente
-      */
-      //console.log(JSON.stringify(userObjet));
-      
-      /* solo demuestra el dato guardado ya es solo string */
-      //console.log(typeof JSON.stringify(userObjet));
-
-      //redirigir a home despues de login
+      // Redirigir a home después de login
       navigate("/home");
     } else {
       console.log("no tiene acceso");
-      alert("usuario o contraseña incorrecta")
+      alert("Usuario o contraseña incorrecta");
     }
   });
 }
 
-function initHome(){
+function initHome() {
   let name = document.getElementById("name");
   let pass = document.getElementById("pass");
   let buttonLogout = document.getElementById("logout");
 
   let stringUser = localStorage.getItem("userData") || "";
-  let objectUser = JSON.parse(stringUser);
+  let objetUser = JSON.parse(stringUser);
 
   let passUser = sessionStorage.getItem("pass") || "";
 
-  name.textContent = objectUser.userName;
+  name.textContent = objetUser.userName;
   pass.textContent = passUser;
 
-  buttonLogout.addEventListener("click", ()=>{
+  buttonLogout.addEventListener("click", () => {
     localStorage.removeItem("userData");
     sessionStorage.removeItem("pass");
 
-    //redirigir a login despues de lopgout
-    navigate("login");
+    // Redirigir a login después de logout
+    navigate("/login");
   });
 }
 
 function initAbout() {
-  //logica especificada para la vista about
-  console.log("vista about cargada");
+  // Lógica específica para la vista about
+  console.log("Vista About cargada");
 }
 
 function initContact() {
-  //logica especifica para la vista contact
-  console.log("vista contact cargada");
-}
+  getUsersList();
 
+  const inputname = document.getElementById("inputName");
+  const inputemail = document.getElementById("inputEmail");
+  const inputage = document.getElementById("inputAge");
+  const inputcity = document.getElementById("inputCity");
+  const btnCreateUser = document.getElementById("btnCreateUser");
+
+  let name;
+  let email;
+  let age;
+  let city;
+
+  inputname.addEventListener("input", (e) => {
+    name = e.target.value;
+  });
+  inputemail.addEventListener("input", (e) => {
+    email = e.target.value;
+  });
+  inputage.addEventListener("input", (e) => {
+    age = e.target.value;
+  });
+  inputcity.addEventListener("input", (e) => {
+    city = e.target.value;
+  });
+
+  btnCreateUser.addEventListener("click", async () => {
+    const user = {
+      name,
+      email,
+      age,
+      city
+    };
+
+    const response = await createUser(user);
+    console.log(response);
+
+    if (response) {
+      console.log("Se guardó el usuario");
+    }
+    
+    // createUser(user).then((resp)=>{
+    //   console.log(resp)
+    //   if (resp){
+    //    console.log( "Se aguardo el usuario")
+    //   }
+    // })
+  });
+
+  // Lógica específica para la vista contact
+  console.log("Vista Contact cargada");
+}
+/*------------------------------------------------*/
+async function getUsersList() {
+  console.log("Funcion lista usuarios comenzo");
+  
+  let users =  [];
+
+  const newUsers = document.getElementById("newUsers");
+  
+  try{
+    users = await allUsers();
+    renderUsers();
+  }catch(error) {
+    console.error("Error cargando usuarios:", error);
+  }
+
+// Renderizar todos
+  function renderUsers() {
+    newUsers.innerHTML = "";
+
+    users.forEach((user) => {
+      console.log("inicio forEach");
+      
+      const li = document.createElement("li");
+      li.innerHTML = `
+      <div class="user-content">
+      <span class="user-title">${user.name}</span>
+      <span class="user-title">${user.email}</span>
+      <span class="user-title">${user.age}</span>
+      <span class="user-title">${user.city}</span>
+      </div>`;
+
+      newUsers.appendChild(li)//agrega como hijos a la seccion newUsers
+    });
+  }
+}
+/*-------------------------------------------------------- */
 async function initTodoList() {
   let todos = [];
 
@@ -185,7 +252,7 @@ async function initTodoList() {
     }
   }
 
-  // Agregar nuevo todo
+  // Agregar nuevo to_do
   addBtn.addEventListener("click", agregarTodo);
 
   async function agregarTodo() {
@@ -321,8 +388,8 @@ async function initTodoList() {
   cargarTodos();
 }
 
-// inicializar la app al cargar
-document.addEventListener("DOMContentLoaded", ()=>{
+// Inicializar la app al cargar
+document.addEventListener("DOMContentLoaded", () => {
   const initialRoute = isAuthenticated() ? "/home" : "/login";
   navigate(initialRoute);
 });
