@@ -36,3 +36,5 @@ al pasarlos se muestran con inner
       "edad": 28,
       "ciudad": "Madrid"
     },
+
+    de string a objeto se copia .parse
