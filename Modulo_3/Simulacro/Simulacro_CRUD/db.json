@@ -1,10 +1,16 @@
 {
     "usuarios":[
         {
-            "id":"",
-            "name":"",
-            "email":"",
-            "role":""
+            "id":"01",
+            "name":"santiago muñoz",
+            "email":"san@correo.com",
+            "role":"admin"
+        },
+        {
+            "id":"02",
+            "name":"pedro perez",
+            "email":"pperez@correo.com",
+            "role":"user"
         }
     ]
 }
