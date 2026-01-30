@@ -12,5 +12,23 @@
             "email":"pperez@correo.com",
             "role":"user"
         }
+    ],
+    "productos":[
+        {
+            "id":"",
+            "name":"",
+            "price":"",
+            "category":""
+        }
+    ],
+    "pedidos":[
+        {
+            "id":"",
+            "userId":"",
+            "items": [],
+            "total":"",
+            "status":"",
+            "createdAt":""
+        }
     ]
 }

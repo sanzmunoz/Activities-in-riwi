@@ -187,3 +187,22 @@ input.addEventListener("input", (event) => {
     console.log("El texto es:", event.target.value);
     title= event.target.value    
 });
+
+/*let target = 7;
+
+let numbers = [ 1,2,3,4,5,6,7,8,9,10]
+
+let nota;
+for (let i = 0; i<numbers.length;i++){
+    for ()    
+number = numbers[0];
+    result = number + numbers[i];
+
+    if(target === result){
+        console.log()
+    }
+
+    console.log(target === result );
+}
+
+*/
