@@ -1,83 +1,18 @@
 {
-  "usuarios": [
-    {
-      "id": "1",
-      "name": "Juan Pérez",
-      "email": "juan@example.com",
-      "age": 28,
-      "city": "Madrid"
-    },
-    {
-      "id": "2",
-      "name": "María García",
-      "email": "maria@example.com",
-      "age": 25,
-      "city": "Barcelona"
-    },
-    {
-      "id": "e1b3",
-      "name": "juali",
-      "email": "juli@correo.com",
-      "age": "29",
-      "city": "medelllin"
-    },
-    {
-      "id": "70b3",
-      "name": "san",
-      "email": "san@correo.com",
-      "age": "24",
-      "city": "cali"
-    },
-    {
-      "id": "79ac",
-      "name": "san1",
-      "email": "san1@correo.com",
-      "age": "34",
-      "city": "cali"
-    },
-    {
-      "id": "8ab2",
-      "name": "joselito",
-      "email": "jeslo@corre.com",
-      "age": "34",
-      "city": "estar"
-    }
-  ],
-  "productos": [
-    {
-      "id": "1",
-      "nombre": "Laptop",
-      "precio": 899,
-      "stock": 5
-    },
-    {
-      "id": "2",
-      "nombre": "Mouse",
-      "precio": 25,
-      "stock": 50
-    }
-  ],
-  "todos": [
+  "tasks": [
     {
       "id": "fa5b",
-      "titulo": "Aprender JSON SERVER",
+      "titulo": "Tarea de ejemplo",
       "descripcion": "",
       "completado": false,
-      "fechaCreacion": "2026-01-26"
+      "fechaCreacion": "2026-01-30"
     },
     {
       "id": "39da",
-      "titulo": "aprender ReactJS",
+      "titulo": "Pagar cuenta de servicios",
       "descripcion": "",
-      "completado": false,
-      "fechaCreacion": "2026-01-26"
-    },
-    {
-      "id": "1b91",
-      "titulo": "algo",
-      "descripcion": "",
-      "completado": false,
-      "fechaCreacion": "2026-01-26"
+      "completado": true,
+      "fechaCreacion": "2026-01-30"
     }
   ]
 }

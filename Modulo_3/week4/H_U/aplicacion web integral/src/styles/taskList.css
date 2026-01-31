@@ -1,3 +1,5 @@
+/*estilos para la vista de tareas  */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,23 +9,23 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
 }
 
 .container {
-  background: white;
+  margin: 4rem;
+  background: #fcf005;
+  background: linear-gradient(0deg, rgba(252, 240, 5, 1) 0%, rgba(48, 253, 45, 1) 100%);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  padding: 20px;
   max-width: 600px;
   width: 100%;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #ff0000;
   margin-bottom: 30px;
   font-size: 28px;
 }
@@ -34,7 +36,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.todo-input {
+.task-input {
   flex: 1;
   padding: 12px 15px;
   border: 2px solid #e0e0e0;
@@ -43,7 +45,7 @@ h1 {
   transition: border-color 0.3s;
 }
 
-.todo-input:focus {
+.task-input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -60,14 +62,9 @@ h1 {
 }
 
 .btn-add {
-  background-color: #667eea;
-  color: white;
-}
-
-.btn-add:hover {
-  background-color: #5568d3;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  background: #ed1170;
+  background: radial-gradient(circle, rgba(237, 17, 112, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  color: rgb(0, 0, 0);
 }
 
 .btn-add:active {
@@ -128,12 +125,12 @@ h1 {
   border-color: #667eea;
 }
 
-.todo-list {
+.task-list {
   list-style: none;
   margin-bottom: 20px;
 }
 
-.todo-item {
+.task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -145,43 +142,43 @@ h1 {
   transition: all 0.3s ease;
 }
 
-.todo-item:hover {
+.task-item:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: translateX(5px);
 }
 
-.todo-item.completed {
+.task-item.completed {
   opacity: 0.6;
   background-color: #f0f0f0;
   border-left-color: #4caf50;
 }
 
-.todo-item.completed .todo-title {
+.task-item.completed .task-title {
   text-decoration: line-through;
   color: #999;
 }
 
-.todo-content {
+.task-content {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
 }
 
-.todo-checkbox {
+.task-checkbox {
   width: 20px;
   height: 20px;
   cursor: pointer;
   accent-color: #667eea;
 }
 
-.todo-title {
+.task-title {
   font-size: 16px;
   color: #333;
   word-break: break-word;
 }
 
-.todo-actions {
+.task-actions {
   display: flex;
   gap: 8px;
 }
@@ -209,13 +206,13 @@ h1 {
     flex-direction: column;
   }
 
-  .todo-item {
+  .task-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
 
-  .todo-actions {
+  .task-actions {
     width: 100%;
     justify-content: flex-start;
   }

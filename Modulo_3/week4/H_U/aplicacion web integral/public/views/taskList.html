@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tareas</title>
-    <link rel="stylesheet" href="../../src/styles/todoList.css">
+    <link rel="stylesheet" href="../../src/styles/taskList.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mi Lista de Tareas</h1>
+        <h1>Lista de Tareas</h1>
         
         <div class="input-container">
             <input 
                 type="text" 
-                id="todoInput" 
+                id="taskInput" 
                 placeholder="Agregar nueva tarea..." 
-                class="todo-input"
+                class="task-input"
             >
             <button id="addBtn" class="btn btn-add">Agregar</button>
         </div>
 
-        <ul id="todoList" class="todo-list">
-            <!-- Los todos se cargarán aquí -->
+        <ul id="taskList" class="task-list">
+            <!-- Las tareas se cargarán aquí -->
         </ul>
 
         <div id="emptyState" class="empty-state">
-            <p>No hay tareas todavía. ¡Crea una nueva!</p>
+            <p>No hay tareas aún. ¡Crea una !</p>
         </div>
     </div>
 

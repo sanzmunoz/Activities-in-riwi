@@ -1,3 +1,25 @@
+/*estilos para la vista home  */
+.init{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin: 3rem;
+    padding: 4rem;
+    background: #3F5EFB;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    border-radius: 4rem;
+}
+
 .title-home{
-    color: red;
+    color: rgb(255, 230, 0);
+}
+
+.text{
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.guide{
+    font-style: italic;
+    font-size: 1.2rem;
 }
