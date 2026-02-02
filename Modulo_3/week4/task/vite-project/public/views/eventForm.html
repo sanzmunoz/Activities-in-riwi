@@ -1,0 +1,29 @@
+<section>
+    <header>
+        <nav>
+            <button class="secondary" onclick="navigate('/eventList')">Ver eventos</button>
+            <button class="secondary" onclick="navigate('/users')">Ver usuarios registrados</button>
+            <button class="secondary" onclick="logout()">Cerrar sesión</button>
+        </nav>
+    </header>
+    <h2>Bienvenido a Crear un nuevo evento</h2>
+    <form id="eventFormElement">
+        <article>
+            <label>titulo del evento:</label>
+            <input type="text" id="eventTitle" placeholder="Nombre del evento" required>
+        </article>
+        <article>
+            <label>ubicacion:</label>
+            <input type="text" id="eventLocation" placeholder="donde sera?" required>
+        </article>
+        <article>
+            <label>fecha:</label>
+        <input type="date" id="eventDate" required>
+        </article>
+        <article>
+            <label>descripcion:</label>
+        <textarea id="eventDescription" placeholder="describe el evento"></textarea>
+        </article>
+        <button type="submit">crear evento</button>
+    </form>
+</section>

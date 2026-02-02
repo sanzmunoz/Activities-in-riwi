@@ -1,0 +1,41 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "name": "Juan",
+      "email": "juan@example.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "m",
+      "email": "maria@example.com",
+      "password": "1",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "name": "sa",
+      "email": "sa@correo.com",
+      "password": "1234",
+      "role": "user"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "title": "Concierto",
+      "location": "medellin",
+      "Description": "",
+      "date": "01/01/2025"
+    },
+    {
+      "id": "1769972983964",
+      "title": "we",
+      "location": "wee",
+      "Description": "ewe",
+      "date": "2026-02-05"
+    }
+  ]
+}

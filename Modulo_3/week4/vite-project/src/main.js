@@ -228,7 +228,6 @@ async function getUsersList() {
       <span class="user-title">${user.age}</span>
       <span class="user-title">${user.city}</span>
       </div>`;
-
       newUsers.appendChild(li)//agrega como hijos a la seccion newUsers
     });
   }
