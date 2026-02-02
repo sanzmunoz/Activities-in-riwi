@@ -1,0 +1,33 @@
+<section>
+  <header>
+    <nav>
+      <button class="secondary" onclick="navigate('/taskList')">
+        Ver eventos
+      </button>
+      <button class="secondary" onclick="navigate('/users')">
+        Ver usuarios registrados
+      </button>
+      <button class="secondary" onclick="logout()">Cerrar sesión</button>
+    </nav>
+  </header>
+  <h2>Bienvenido a Crear una nueva tarea</h2>
+  <form id="taskFormElement">
+    <article>
+      <label>Titulo de la tarea</label>
+      <input type="text" id="eventTitle" placeholder="Nombre de la tarea" required/>
+    </article>
+    <article>
+      <label>Estado:</label>
+      <input type="text" id="eventLocation" placeholder="en que estado esta?" required/>
+    </article>
+    <article>
+      <label>Fecha:</label>
+      <input type="date" id="eventDate" required />
+    </article>
+    <article>
+      <label>prioridad:</label>
+      <textarea id="eventDescription" placeholder="Alta, Media, Baja"></textarea>
+    </article>
+    <button type="submit">Crear Tarea/button>
+  </form>
+</section>

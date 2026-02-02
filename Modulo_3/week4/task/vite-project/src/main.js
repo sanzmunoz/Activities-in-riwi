@@ -12,6 +12,8 @@ import {
   getUsers,
 } from "./services/auth";
 
+import "./styles/style.css"
+
 window.logout = logout;
 
 //funcion para el cambio entre vistas
@@ -136,6 +138,9 @@ function initRegisterForm() {
   });
 }
 
+//variable para almacenar valores de tickets
+const tickets = [];
+
 //funcion para lista de eventos
 async function initEventList() {
   console.log("Inicializando lista de eventos");
@@ -157,7 +162,13 @@ async function initEventList() {
         <h3>${event.title}</h3>
         <p>Ubicación: ${event.location}</p>
         <p>Fecha: ${event.date}</p>
-        <p>${event.Description || "Sin descripción"}</p>
+        <p>Descripción: ${event.Description || "Sin descripción"}</p>
+        <p>Capacidad: ${event.capacity || "Capacidad no especificada"} Personas.</p>
+        <article>
+            <label>Cuantos boletos deseas adquirir:</label>
+            <select id="eventTicket">Canti</select>
+            <button class="third">Guardar</button>
+        </article>
       </div>
     `,
       )
@@ -167,6 +178,7 @@ async function initEventList() {
   }
 }
 
+//funcion para crear eventos la cual pide varios parametros
 async function initEventForm() {
   console.log("Inicializando formulario de eventos");
 
@@ -176,7 +188,7 @@ async function initEventForm() {
     return;
   }
 
-  const form = document.getElementById("eventFormElement");
+  const form = document.getElementById("eventFormElement");//consume el app
 
   if (!form) {
     console.error("Formulario de eventos no encontrado");
@@ -184,7 +196,7 @@ async function initEventForm() {
   }
 
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    e.preventDefault();//evita que se recarge el dom completo
 
     const event = {
       id: String(Date.now()),
@@ -192,6 +204,7 @@ async function initEventForm() {
       location: document.getElementById("eventLocation").value,
       Description: document.getElementById("eventDescription").value,
       date: document.getElementById("eventDate").value,
+      capacity: document.getElementById("eventCapacity").value
     };
 
     try {
@@ -226,19 +239,19 @@ async function viewUsers() {
   console.log("Inicializando lista de usuarios");
   const userList = document.getElementById("userList");
 
-   if (!userList) return;
+  if (!userList) return;
 
-   try {
-     const users = await getUsers();
+  try {
+    const users = await getUsers();
 
-     if (users.length === 0) {
-       userList.innerHTML = "<p>No hay usuarios disponibles</p>";
-       return;
-     }
+    if (users.length === 0) {
+      userList.innerHTML = "<p>No hay usuarios disponibles</p>";
+      return;
+    }
 
-     userList.innerHTML = users
-       .map(
-         (user) => `
+    userList.innerHTML = users
+      .map(
+        (user) => `
           <div class="user-item">
             <h3>${user.name}</h3>
             <p>correo: ${user.email}</p>
@@ -246,9 +259,9 @@ async function viewUsers() {
             <p>rol del usuario: ${user.role}</p>
           </div>
         `,
-       )
-       .join("");
-   } catch (error) {
-     userList.innerHTML = `<p>Error cargando usuarios: ${error.message}</p>`;
-   }
+      )
+      .join("");
+  } catch (error) {
+    userList.innerHTML = `<p>Error cargando usuarios: ${error.message}</p>`;
+  }
 }

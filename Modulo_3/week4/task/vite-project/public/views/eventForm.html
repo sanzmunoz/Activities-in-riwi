@@ -9,20 +9,24 @@
     <h2>Bienvenido a Crear un nuevo evento</h2>
     <form id="eventFormElement">
         <article>
-            <label>titulo del evento:</label>
+            <label>Titulo del evento:</label>
             <input type="text" id="eventTitle" placeholder="Nombre del evento" required>
         </article>
         <article>
-            <label>ubicacion:</label>
+            <label>Ubicacion:</label>
             <input type="text" id="eventLocation" placeholder="donde sera?" required>
         </article>
         <article>
-            <label>fecha:</label>
+            <label>Fecha:</label>
         <input type="date" id="eventDate" required>
         </article>
         <article>
-            <label>descripcion:</label>
+            <label>Descripcion:</label>
         <textarea id="eventDescription" placeholder="describe el evento"></textarea>
+        </article>
+        <article>
+            <label>Capacidad:</label>
+            <textarea id="eventCapacity" placeholder="¿Para cuantas personas?"></textarea>
         </article>
         <button type="submit">crear evento</button>
     </form>

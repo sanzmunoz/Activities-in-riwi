@@ -1,5 +1,5 @@
-@import "./eventForm.css";
-@import "./eventList.css";
+@import "./taskForm.css";
+@import "./taskList.css";
 @import "./login.css";
 @import "./regist.css";
 @import "./users.css";
@@ -86,6 +86,15 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(184, 184, 184);
+  height: 5rem;
+  border-radius: 1.5rem;
 }
 
 @media (prefers-color-scheme: light) {

@@ -1,0 +1,8 @@
+.regist{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(208, 216, 216);
+    height: 15rem;
+    width: 24rem;
+    border-radius: 1rem;
+}
