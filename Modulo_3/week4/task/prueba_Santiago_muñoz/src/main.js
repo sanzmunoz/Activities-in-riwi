@@ -10,12 +10,14 @@ import {
   createTask,
   updateTask,
   getTaskById,
-  deleteTask
+  deleteTask,
+  getUser,
 } from "./services/auth";
 import {} from "./styles/style.css";
 
 window.logout = logout;
 let editingTaskId = null; // controla el estado de edicion
+let deleteTaskId = null;
 
 //navigate between routes
 function navigate(route) {
@@ -65,6 +67,7 @@ async function initTaskList() {
 
   try {
     const tasks = await getTasks();
+    const user = await getUser();
     if (tasks.length === 0) {
       tasksList.innerHTML = "<p>No hay tareas disponibles</p>";
       return;
@@ -72,29 +75,40 @@ async function initTaskList() {
 
     tasksList.innerHTML = tasks
       .map(
-        (task) => `
-      <div class="event-item">
+        (task, user) => `
+        <div class="event-item">
         <h3>Titulo de la tarea: ${task.title}</h3>
         <p><strong>Estado:</strong> ${task.location}</p>
         <p><strong>Prioridad:</strong> ${task.Description || "Sin descripción"}</p>
+        <p><strong>usuario:</strong> ${user.name || "Sin descripción"}</p>
+        <p><strong>fecha de entrega:</strong> ${task.date}</p>
         <article>
-            ${isAdmin()
+            ${
+              isAdmin()
                 ? `<button class="secondary" onclick="prepareEdit('${task.id}')">Editar Tarea</button>
                 <button class="secondary btn-del" data-id='${task.id}'>Eliminar Tarea</button>`
                 : `<span>Solo lectura</span>`
             }
         </article>
       </div>
-    `,
+      `,
       )
       .join("");
   } catch (error) {
     tasksList.innerHTML = `<p>Error: ${error.message}</p>`;
   }
-  // const delbuton= tasksList.querySelector(".btn-del");
-  // delbuton.addEventListener("click", () => deleteTask(id));
-}
 
+  //bloque para borrar elementos
+  const delbuton = tasksList.querySelectorAll(".btn-del");
+  delbuton.forEach((e) => {
+    e.addEventListener("click", async (event) => {
+      event.preventDefault();
+      console.log(event.target.dataset.id);
+      await deleteTask(event.target.dataset.id);
+      navigate("/taskList");
+    });
+  });
+}
 
 // function so admin can edit
 window.prepareEdit = async function (id) {
@@ -104,7 +118,7 @@ window.prepareEdit = async function (id) {
   }
   editingTaskId = id;
   alert("vas a editar la tarea que seleccionaste");
-  navigate("/taskForm"); 
+  navigate("/taskForm");
 };
 
 //task form to which you can enter
@@ -128,8 +142,15 @@ async function initTaskForm() {
       location: document.getElementById("eventLocation").value,
       Description: document.getElementById("eventDescription").value,
       date: document.getElementById("eventDate").value,
+      user: document.getElementById("userCreate").value
     };
-
+//////////////////////// EN REVISION
+    try{
+      user = userOnline;
+      console.log(`asignando usuario ${user}`);
+      //user.innerHTML = user;
+    }catch{}
+//////////////////////
     try {
       if (editingTaskId) {
         console.log("Actualizando tarea:", editingTaskId);
@@ -139,7 +160,6 @@ async function initTaskForm() {
         await createTask({ id: String(Date.now()), ...taskData });
         alert("Tarea creada");
       }
-
       editingTaskId = null;
       navigate("/taskList");
     } catch (error) {
@@ -169,7 +189,7 @@ function initLoginForm() {
     try {
       const usuarioValido = await login(user, pass);
       console.log("Sesión iniciada:", usuarioValido);
-
+      userOnline = user;
       if (usuarioValido.role === "admin") {
         navigate("/taskList");
       } else {
@@ -212,7 +232,7 @@ function initRegisterForm() {
       const newUser = await register({ name, email, password });
       console.log("Usuario registrado:", newUser);
       alert("Registro exitoso. Iniciando sesión...");
-      navigate("/eventList");
+      navigate("/taskForm");
     } catch (error) {
       alert(error.message || "Error en el registro");
     }

@@ -81,6 +81,19 @@ export const register = async (userData) => {
   }
 };
 
+//user management
+export const getUser = async () => {
+  try {
+    const response = await fetch(USER_API_URL);
+    return await response.json(); //
+  } catch (err) {
+    console.error("Error fetching user:", err);
+    throw err;
+  }
+};
+
+
+
 //task management
 export const getTasks = async () => {
   try {
@@ -141,8 +154,6 @@ export const deleteTask = async (id) => {
     throw error;
   }
 };
-
-
 
 //access control
 export function checkRouteAccess(pathname) {

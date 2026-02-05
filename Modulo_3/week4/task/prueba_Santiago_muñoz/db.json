@@ -13,23 +13,22 @@
       "email": "maria@example.com",
       "password": "1234",
       "role": "user"
+    },
+    {
+      "id": "3",
+      "name": "esneid",
+      "email": "es@correo.com",
+      "password": "1234",
+      "role": "user"
     }
   ],
   "task": [
     {
-      "title": "Realizar login",
-      "location": "pendiente",
-      "Description": "alta",
-      "date": "2026-02-12",
-      "id": "1770033082333"
-    },
-    {
-      "id": "1770049696358",
-      "title": "otro",
-      "location": "lugar",
-      "Description": "alta",
-      "date": "2026-01-30"
+      "id": "1770143877882",
+      "title": "kk",
+      "location": "kk",
+      "Description": "kk",
+      "date": "2026-02-06"
     }
   ]
 }
-
