@@ -10,19 +10,23 @@ app.listen(port, () => {
 });
 
 mongo.connect("mongodb://localhost:27017/BasePrueba").then(()=>{
-    console.log("Conecto");
+    console.log("Conectando...");
     
 }).catch((error) =>{
     console.log("no fuiciono" + error);
 });
 
-let PersonaSchema= mongo.Schema({
-    nombre : String,
-    apellido: String,
-    email: String
-}, {
-    Collection : "usuarios"
-})
+let PersonaSchema= mongo.Schema(
+    {
+        nombre : String,
+        apellido: String,
+        email: String,
+        cedula :String
+    },
+    {
+        Collection : "usuarios"
+    }
+);
 
 let Persona = mongo.model("usuarios", PersonaSchema);
 
