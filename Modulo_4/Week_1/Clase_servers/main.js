@@ -9,6 +9,7 @@ import { dbConnection } from "./lib/database.js";
 import Users from "./models/users.js";
 
 const app = express(); //app se convirte en mi express de trabajo
+app.use(express.json());
 
 app.get("/users", async (req, res) => {
 
@@ -27,11 +28,29 @@ app.get("/users", async (req, res) => {
   });
 });
 
-app.post("/users", (req, res) => {
-  //in servicio get que se puede consumir y el endpoint se puede cambiar "users/"
-  res.json({
-    message: "este es un poste",
-  });
+app.post("/users", async (req, res) => {
+  try {
+    await dbConnection();
+
+    if (!req.body.name || !req.body.email) {
+      return res.status(400).json({
+        message: "El nombre y email son requeridos",
+      });
+    }
+
+    const newUser = new Users(req.body);
+    const savedUser = await newUser.save();
+
+    res.status(201).json({
+      message: "Usuario creado exitosamente",
+      user: savedUser,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error al crear el usuario",
+      error: error.message,
+    });
+  }
 });
 
 app.listen(3000, () => {
